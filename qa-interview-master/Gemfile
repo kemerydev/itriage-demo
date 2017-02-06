@@ -1,0 +1,18 @@
+source 'https://rubygems.org'
+
+group :development, :test do
+  gem 'rake'
+end
+
+group :test do
+  gem 'activesupport'
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'cucumber'
+  gem 'headless'
+  gem 'selenium-webdriver', '2.53'
+  gem 'pry'
+  gem 'pry-nav'
+  gem 'page-object'
+  gem 'rspec-expectations'
+end
