@@ -11,7 +11,12 @@ SERVER_URL  ||= 'https://www.itriagehealth.com'
 WEB_BROWSER ||= :firefox
 
 Capybara.register_driver WEB_BROWSER do |app|
-  Capybara::Selenium::Driver.new(app, browser: WEB_BROWSER)
+  profile = case WEB_BROWSER
+              when :firefox
+                Selenium::WebDriver::Firefox::Profile.new
+            end
+  profile['geo.enabled'] = false
+  Capybara::Selenium::Driver.new(app, :browser => WEB_BROWSER, :profile => profile)
 end
 
 Capybara.configure do |config|

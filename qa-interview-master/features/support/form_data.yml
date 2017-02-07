@@ -1,3 +1,7 @@
 login_credentials:
   :email_address : fulvius@gmail.com
   :password : UT375rnH
+
+invalid_credentials:
+  :email_address : my_luggage@example.com
+  :password : 12345

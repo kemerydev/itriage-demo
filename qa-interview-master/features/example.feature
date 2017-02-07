@@ -11,14 +11,18 @@ Feature: An Example Feature
       | Conditions  | /conditions      |
       | Medications | /medications     |
       | Procedures  | /procedures      |
-      | My-iTriage  | /my-itriage      |
       | News        | /news/categories |
 
   Scenario: User is able to log in from the home screen with correct credentials
     Given I click the login link
-    And I enter correct login credentials
+    And I submit correct login credentials
+    Then I should see a logout link
+    Given I click the logout link
+    Then I should see a login link
 
   Scenario: Unable to login from the home screen with incorrect credentials
+    Given I click the login link
+    And I submit incorrect login credentials
 
   Scenario: Navigate to a hospital and return the hospital name and zip code
 
